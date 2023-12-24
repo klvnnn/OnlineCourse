@@ -8,7 +8,7 @@
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            JavaScript Dasar
+                            {{ $course->judul}}
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
                             Detail Kelas
@@ -18,7 +18,7 @@
                 <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
                     <div class="nav-wrapper position-relative end-0">
                         <i class="fas fa-clock"></i>
-                        <span class="ms-2">Durasi Kelas : </span>
+                        <span class="ms-2">Durasi Kelas : {{ $course->durasi}}</span>
                     </div>
                 </div>
             </div>
@@ -34,9 +34,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsam veritatis labore
-                            voluptas alias porro autem enim illo, similique sapiente impedit non ea! Vitae debitis obcaecati
-                            sed ea magnam pariatur!</p>
+                        <p>{{ $course->deskripsi}}</p>
                     </div>
                 </div>
             </div>

@@ -41,11 +41,13 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/profile/{id}', [UserProfileController::class, 'update'])->name('profile.update');
 	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-	// Route::get('/courses/detail', function () {
-	// 	return view('pages.detail');
-	// });
-	//Course
+
+	//Courses
+	Route::get('course/create', [CourseController::class, 'create'])->name('course.create');
+	Route::post('course/create', [CourseController::class, 'store'])->name('course.store');
+	Route::get('course/{id}', [CourseController::class, 'show'])->name('course.detail');
+	// Route::get('course/{id}/edit', [CourseController::class, 'edit'])->name('course.edit');
+	// Route::put('course/{id}', [CourseController::class, 'update'])->name('course.update');
+	// Route::delete('course/{id}/delete', [CourseController::class, 'destroy'])->name('course.destroy');
+
 });
-
-
-// Route::get('/courses/details', [CourseController::class, 'index'])->name('courses-detail');

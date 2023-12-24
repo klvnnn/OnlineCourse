@@ -4,12 +4,13 @@
     @include('layouts.navbars.auth.topnav', ['title' => 'Courses'])
     <div class="container-fluid py-4">
         <div class="row">
+            @foreach ($course as $courses)
             <div class="col-lg-4 pt-2">
                 <div class="card">
                     <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
                         <div class="d-flex justify-content-end">
                             <a class="btn btn-success btn-xs me-2"
-                                href="{{ route('page', ['page' => 'detail']) }}">
+                                href="{{ route('course.detail', $courses->id) }}">
                                 <i class="fas fa-eye"></i> &nbsp; Detail
                             </a>
                             <a class="btn btn-primary btn-xs me-2"
@@ -26,16 +27,16 @@
                     </div>
                     <div class="card-body pt-2">
                             <p class="card-title h5 d-block text-darker">
-                            JavaScript Dasar
+                            {{ $courses->judul}}
                             </p>
                             <p class="card-description">
-                            Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons.
+                            {{ $courses->deskripsi }}
                             </p>
                         <div class="author mb-2">
                             <div class="name">
                                 <span>Durasi</span>
                                 <div class="stats">
-                                <small class="fas fa-clock">&nbsp;19 Jam</small>
+                                <small class="fas fa-clock">&nbsp;{{$courses->durasi }} bulan</small>
                                 </div>
                             </div>
                         </div>
@@ -45,6 +46,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
         @include('layouts.footers.auth.footer')
     </div>
